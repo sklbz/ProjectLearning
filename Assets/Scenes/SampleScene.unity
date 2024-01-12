@@ -857,6 +857,7 @@ GameObject:
   - component: {fileID: 785479918}
   - component: {fileID: 785479919}
   - component: {fileID: 785479920}
+  - component: {fileID: 785479921}
   - component: {fileID: 785479917}
   m_Layer: 0
   m_Name: Game Manager
@@ -1282,6 +1283,57 @@ MonoBehaviour:
   - 747 000
   _clipCorrect: {fileID: 8300000, guid: 00e5d50876857f447bf7c1c5bc36bea2, type: 3}
   _clipUncorrect: {fileID: 8300000, guid: d5dc5b3093030b44f838316108ce1b26, type: 3}
+--- !u!114 &785479921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785479912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c12dafc2c17f2945a43e43ab94467b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _source: {fileID: 0}
+  questionText: {fileID: 566051549}
+  answerText: {fileID: 1132607997}
+  goodText: {fileID: 1289540852}
+  badText: {fileID: 11942523}
+  _eventName:
+  - Turgot libre circulation des grains
+  - guerre des farines
+  - Necker libre circulation des grains
+  - Philippe le Bel creation des EG
+  - derniere convocation EG
+  - Lamoignon supprime le droit d'enregistrement
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  _eventDate:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  _clipCorrect: {fileID: 8300000, guid: 00e5d50876857f447bf7c1c5bc36bea2, type: 3}
+  _clipUncorrect: {fileID: 8300000, guid: d5dc5b3093030b44f838316108ce1b26, type: 3}
 --- !u!1 &804543212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,7 +1724,7 @@ MonoBehaviour:
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 1
-    m_VerticalOverflow: 0
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 
 --- !u!222 &1132607998
@@ -1905,8 +1957,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -71}
-  m_SizeDelta: {x: 250, y: 30}
+  m_AnchoredPosition: {x: -15, y: -71}
+  m_SizeDelta: {x: 280, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1907440694
 MonoBehaviour:

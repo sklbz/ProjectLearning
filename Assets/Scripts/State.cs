@@ -3,5 +3,6 @@ enum questionState {
     GEOGRAPHIE,
     CHILI,
     GEO_VILLE_CENTRE,
-    GEO_AAV
+    GEO_AAV,
+    HIST_REVOLUTION_DATE
 }

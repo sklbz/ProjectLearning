@@ -12,6 +12,7 @@ public class Manager : MonoBehaviour
     GeoChili _chili;
     GeoFranceVilleCentre _franceVilleCentre;
     GeoFranceAAV _franceAAV;
+    HistRevolutionFrancaise _histRevolFrancaise;
     QuestionHandler _handler;
 
     void Awake() {
@@ -20,6 +21,7 @@ public class Manager : MonoBehaviour
         _geo = GetComponent<QuestionManager>();
         _franceAAV = GetComponent<GeoFranceAAV>();
         _franceVilleCentre = GetComponent<GeoFranceVilleCentre>();
+        _histRevolFrancaise = GetComponent<HistRevolutionFrancaise>();
 
         Init();        
 
@@ -47,6 +49,10 @@ public class Manager : MonoBehaviour
 
             case questionState.GEO_AAV:
                 _handler = _franceAAV;
+
+                break;
+            case questionState.HIST_REVOLUTION_DATE:
+                _handler = _histRevolFrancaise;
 
                 break;
         }
