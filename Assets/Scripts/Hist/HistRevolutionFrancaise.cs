@@ -11,7 +11,7 @@ public class HistRevolutionFrancaise : QuestionHandler {
     Text questionText, answerText, goodText, badText;
 
     [SerializeField]
-    string[] _dataName = new string[15], _dataHab = new string[15];
+    string[] _eventName = new string[15], _eventDate = new string[15];
 
     string _answer, _question;
 
@@ -43,13 +43,14 @@ public class HistRevolutionFrancaise : QuestionHandler {
     }
 
     public override void GenerateQuestion() {
-        int index = Random.Range(0, _dataName.Length);
+        int index = Random.Range(0, _eventName.Length);
         string rank = $"{index + 1}eme";
 
         bool isName = Random.Range(0, 8) == 1;
 
-        _question = !isName ? _dataName[index] : rank.ToString();
+        _question = !isName ? _eventName[index] : rank.ToString();
         questionText.text = isName ? _question : $"{_question} AAV";
-        _answer = !isName ? _dataHab[index] : _dataName[index];
+        _answer = !isName ? _eventDate[index] : _eventName[index];
         _answer = _answer.ToLower();
     }
+}
