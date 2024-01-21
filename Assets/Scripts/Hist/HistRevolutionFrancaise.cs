@@ -8,6 +8,8 @@ using UnityEngine;
 public class HistRevolutionFrancaise : QuestionHandler {
     int good = 0, bad = 0;
     [SerializeField]
+    int starting_index = 0;
+    [SerializeField]
     Text questionText, answerText, goodText, badText;
 
     [SerializeField]
@@ -36,20 +38,19 @@ public class HistRevolutionFrancaise : QuestionHandler {
     }
 
     void UpdateValues() {
-        Debug.Log($"good:{good}\tbad:{bad}\nQ: {_question}\tA: {_answer}");
+        Debug.Log($"good:{good}\tbad:{bad}\t\tQ: {_question}\tA: {_answer}");
 
         goodText.text = good.ToString();
         badText.text = bad.ToString();
     }
 
     public override void GenerateQuestion() {
-        int index = Random.Range(0, _eventName.Length);
-        string rank = $"{index + 1}eme";
+        int index = Random.Range(starting_index, _eventName.Length);
 
         bool isName = Random.Range(0, 8) == 1;
 
-        _question = !isName ? _eventName[index] : rank.ToString();
-        questionText.text = isName ? _question : $"{_question} AAV";
+        _question = !isName ? _eventName[index] : _eventDate[index];
+        questionText.text = _question;
         _answer = !isName ? _eventDate[index] : _eventName[index];
         _answer = _answer.ToLower();
     }

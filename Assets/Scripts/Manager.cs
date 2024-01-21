@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Manager : MonoBehaviour
 {
@@ -14,6 +15,12 @@ public class Manager : MonoBehaviour
     GeoFranceAAV _franceAAV;
     HistRevolutionFrancaise _histRevolFrancaise;
     QuestionHandler _handler;
+
+    float time = 0f;
+    bool time_enabled = false;
+
+    [SerializeField]
+    Text Chrono;
 
     void Awake() {
         _deu = GetComponent<Allemand>();
@@ -63,6 +70,9 @@ public class Manager : MonoBehaviour
 
     public void Submit() {
         _handler.Submit();
+
+        if (!time_enabled)
+            LaunchChrono();
     }
 
     void Init() {
@@ -76,5 +86,18 @@ public class Manager : MonoBehaviour
     void Update() {
         if (Input.GetButtonDown("Submit"))
             Submit();
+    }
+
+    void LateUpdate() {
+        if (!time_enabled)
+            return;
+
+        time += Time.fixedDeltaTime;
+        float displayedTime = Mathf.Round(time * 100) / 100;
+        Chrono.text = displayedTime.ToString();
+    }
+
+    private void LaunchChrono() {
+        time_enabled = true;
     }
 }
