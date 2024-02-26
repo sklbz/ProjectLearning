@@ -17,7 +17,7 @@ public class Manager : MonoBehaviour
     QuestionHandler _handler;
 
     float time = 0f;
-    bool time_enabled = false;
+    bool _time = false;
 
     [SerializeField]
     Text Chrono;
@@ -71,7 +71,7 @@ public class Manager : MonoBehaviour
     public void Submit() {
         _handler.Submit();
 
-        if (!time_enabled)
+        if(!_time)
             LaunchChrono();
     }
 
@@ -89,15 +89,14 @@ public class Manager : MonoBehaviour
     }
 
     void LateUpdate() {
-        if (!time_enabled)
+        if (!_time)
             return;
 
         time += Time.fixedDeltaTime;
-        float displayedTime = Mathf.Round(time * 100) / 100;
-        Chrono.text = displayedTime.ToString();
+        Chrono.text = $"{time:0.00}";
     }
 
     private void LaunchChrono() {
-        time_enabled = true;
+        _time = true;
     }
 }
