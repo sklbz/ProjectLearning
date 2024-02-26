@@ -69,6 +69,7 @@ public class Manager : MonoBehaviour
     }
 
     public void Submit() {
+        Debug.Log("submit");
         _handler.Submit();
 
         if(!_time)
