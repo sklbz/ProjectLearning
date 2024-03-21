@@ -14,6 +14,7 @@ public class Manager : MonoBehaviour
     GeoFranceVilleCentre _franceVilleCentre;
     GeoFranceAAV _franceAAV;
     HistRevolutionFrancaise _histRevolFrancaise;
+    HistEuropeXIXe _histEuropeXIXe;
     QuestionHandler _handler;
 
     float time = 0f;
