@@ -19,7 +19,7 @@ public class HistEuropeXIXe : QuestionHandler {
     AudioClip _clipCorrect, _clipUncorrect;
 
     void Start() {
-        
+        if (ending_index == 0) ending_index = _eventDate.Length;
     }
 
     public override void Submit() {
@@ -47,9 +47,9 @@ public class HistEuropeXIXe : QuestionHandler {
     }
 
     public override void GenerateQuestion() {
-        int index = Random.Range(starting_index, _eventName.Length);
+        int index = Random.Range(starting_index, ending_index);
 
-        bool isName = Random.Range(0, 8) == 1;
+        bool isName = Random.Range(0, 1) == 1;
 
         _question = !isName ? _eventName[index] : _eventDate[index];
         questionText.text = _question;
