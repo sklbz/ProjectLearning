@@ -6,7 +6,7 @@ using UnityEngine;
 public class HistEuropeXIXe : QuestionHandler {
     int good = 0, bad = 0;
     [SerializeField]
-    int starting_index = 0;
+    int starting_index = 0, ending_index;
     [SerializeField]
     Text questionText, answerText, goodText, badText;
 
@@ -17,6 +17,10 @@ public class HistEuropeXIXe : QuestionHandler {
 
     [SerializeField]
     AudioClip _clipCorrect, _clipUncorrect;
+
+    void Start() {
+        
+    }
 
     public override void Submit() {
         if (answerText.text.ToLower() == _answer)

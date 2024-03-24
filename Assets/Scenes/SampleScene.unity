@@ -858,6 +858,7 @@ GameObject:
   - component: {fileID: 785479919}
   - component: {fileID: 785479920}
   - component: {fileID: 785479921}
+  - component: {fileID: 785479922}
   - component: {fileID: 785479917}
   m_Layer: 0
   m_Name: Game Manager
@@ -1065,7 +1066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7d787123b39ee4b941b3e08a155d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _state: 5
+  _state: 6
   Chrono: {fileID: 1690196214}
 --- !u!82 &785479917
 AudioSource:
@@ -1291,7 +1292,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785479912}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c12dafc2c17f2945a43e43ab94467b9, type: 3}
   m_Name: 
@@ -1498,6 +1499,128 @@ MonoBehaviour:
   - 1 mars 1815
   - 20 mars 1815
   - 18 juin 1815
+  _clipCorrect: {fileID: 8300000, guid: 00e5d50876857f447bf7c1c5bc36bea2, type: 3}
+  _clipUncorrect: {fileID: 8300000, guid: d5dc5b3093030b44f838316108ce1b26, type: 3}
+--- !u!114 &785479922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785479912}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88658e9cdc2fba4ba86ea1947704830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _source: {fileID: 785479917}
+  starting_index: 0
+  questionText: {fileID: 566051549}
+  answerText: {fileID: 1132607997}
+  goodText: {fileID: 1289540852}
+  badText: {fileID: 11942523}
+  _eventName:
+  - octroi de la Charte
+  - majorite ultra
+  - dissolution chambre des deputes
+  - duc de berry est tue
+  - chambre ultra
+  - mort louis xviii
+  - lois reactionnaires
+  - sacre charles X
+  - majorite liberale
+  - prince de polignac chef de gouv -> adresse des 221
+  - 1ere dissolution
+  - 2eme dissolution
+  - 4 ordonnances
+  - 3 Glorieuses
+  - Adolphe Thiers
+  - Guizot
+  - revolte a Paris et Lyon
+  - travail interdit moins de 8 ans
+  - reseau ferre ++
+  - 248K droit de vote
+  - attentat Fieschi
+  - loi repressives
+  - crise eco
+  - banquet du chateau rouge
+  - interdiction banquets
+  - congres de vienne
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  _eventDate:
+  - 4 juin 1814
+  - 1815
+  - 1816
+  - 1820
+  - 1824
+  - 16 sept 1824
+  - avril 1825
+  - mai 1825
+  - 1827
+  - 1829
+  - 16 mai 1830
+  - 19 juillet 1830
+  - 25 juillet 1830
+  - 27-28-29 juillet 1830
+  - president conseil 1830
+  - president conseil 1840
+  - 1831-34
+  - 1841
+  - 1842
+  - 1848
+  - 1835
+  - sept1835
+  - 1846
+  - 9 juillet 1847
+  - 22 fevrier 1848
+  - sept 1814 juin 1815
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   _clipCorrect: {fileID: 8300000, guid: 00e5d50876857f447bf7c1c5bc36bea2, type: 3}
   _clipUncorrect: {fileID: 8300000, guid: d5dc5b3093030b44f838316108ce1b26, type: 3}
 --- !u!1 &804543212

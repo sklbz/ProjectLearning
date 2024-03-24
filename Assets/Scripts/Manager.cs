@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +16,7 @@ public class Manager : MonoBehaviour
     GeoFranceVilleCentre _franceVilleCentre;
     GeoFranceAAV _franceAAV;
     HistRevolutionFrancaise _histRevolFrancaise;
-    HistEuropeXIXe _histEuropeXIXe;
+    HistEuropeXIXe _histEuropeXIX;
     QuestionHandler _handler;
 
     float time = 0f;
@@ -61,6 +63,14 @@ public class Manager : MonoBehaviour
                 break;
             case questionState.HIST_REVOLUTION_DATE:
                 _handler = _histRevolFrancaise;
+
+                break;
+            case questionState.HIST_EUROPE_XIX:
+                _handler = _histEuropeXIX;
+
+                break;
+            default:
+                EditorApplication.Exit(-1);
 
                 break;
         }
