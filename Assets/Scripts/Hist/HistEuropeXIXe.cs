@@ -49,7 +49,7 @@ public class HistEuropeXIXe : QuestionHandler {
     public override void GenerateQuestion() {
         int index = Random.Range(starting_index, ending_index);
 
-        bool isName = Random.Range(0, 1) == 1;
+        bool isName = Random.Range(0, 2) == 1;
 
         _question = !isName ? _eventName[index] : _eventDate[index];
         questionText.text = _question;

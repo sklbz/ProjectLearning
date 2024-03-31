@@ -32,6 +32,7 @@ public class Manager : MonoBehaviour
         _franceAAV = GetComponent<GeoFranceAAV>();
         _franceVilleCentre = GetComponent<GeoFranceVilleCentre>();
         _histRevolFrancaise = GetComponent<HistRevolutionFrancaise>();
+        _histEuropeXIX = GetComponent<HistEuropeXIXe>();
 
         Init();        
 
@@ -80,6 +81,7 @@ public class Manager : MonoBehaviour
     }
 
     public void Submit() {
+        Debug.Log("submit");
         _handler.Submit();
 
         if(!_time)
@@ -97,6 +99,8 @@ public class Manager : MonoBehaviour
     void Update() {
         if (Input.GetButtonDown("Submit"))
             Submit();
+
+        Debug.Log(Input.GetButtonDown("Submit"));
     }
 
     void LateUpdate() {
