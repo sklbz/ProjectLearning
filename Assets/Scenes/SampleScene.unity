@@ -859,6 +859,7 @@ GameObject:
   - component: {fileID: 785479920}
   - component: {fileID: 785479921}
   - component: {fileID: 785479922}
+  - component: {fileID: 785479923}
   - component: {fileID: 785479917}
   m_Layer: 0
   m_Name: Game Manager
@@ -1066,7 +1067,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7d787123b39ee4b941b3e08a155d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _state: 6
+  _state: 7
   Chrono: {fileID: 1690196214}
 --- !u!82 &785479917
 AudioSource:
@@ -1508,14 +1509,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785479912}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e88658e9cdc2fba4ba86ea1947704830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _source: {fileID: 785479917}
-  starting_index: 20
-  ending_index: 30
+  starting_index: 0
+  ending_index: 42
   questionText: {fileID: 566051549}
   answerText: {fileID: 1132607997}
   goodText: {fileID: 1289540852}
@@ -1593,12 +1594,12 @@ MonoBehaviour:
   - 1842
   - 1848
   - 1835
-  - sept 1835 france
+  - sept 1835
   - 1846
   - 9 juillet 1847
   - 22 fev 1848
   - sept 1814 juin 1815
-  - sept 1815 europe
+  - sept 1815
   - nov 1815
   - 1823
   - 1821
@@ -1624,6 +1625,81 @@ MonoBehaviour:
   - 
   _clipCorrect: {fileID: 8300000, guid: 00e5d50876857f447bf7c1c5bc36bea2, type: 3}
   _clipUncorrect: {fileID: 8300000, guid: d5dc5b3093030b44f838316108ce1b26, type: 3}
+--- !u!114 &785479923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785479912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 760e777ca78c29848b98b5f3f77031c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _source: {fileID: 0}
+  starting_index: 0
+  ending_index: 10
+  questionText: {fileID: 566051549}
+  answerText: {fileID: 1132607997}
+  goodText: {fileID: 1289540852}
+  badText: {fileID: 11942523}
+  _eventName:
+  - defaite de Sedan
+  - proclamation de la republique a paris
+  - nord de la france occuppe
+  - paris assiege par les allemands
+  - 'armistice '
+  - traite de francfort
+  - election assemblee nationale
+  - recuperation des canons de la butte montmartre
+  - armee des versailais dans paris
+  - belleville tombe
+  - vote de lois constitutionnelles apres querelle du drapeau
+  - chambre republicaine
+  - dissolution par mac mahon
+  - soumission de mac mahon
+  - victoire republicaine a l election senatoriale mac mahon se demet
+  - jules grevy
+  - creation parti radical
+  - encyclique de rerum novarum
+  - liberte presse et reunion
+  - liberte municipale
+  - liberte de creation de syndicat
+  - liberte d association
+  - separation eglise etat
+  - enveloppe et isoloirs
+  - exclure les religieux de l enseignement public
+  - bataillons scolaires
+  _eventDate:
+  - 2 sept 1870
+  - 4 sept 1870
+  - 1870
+  - 28 janvier 1871
+  - 10 mai 1871
+  - 8 fev 1871
+  - 18 mars 1871
+  - 27 mai 1771
+  - 18 mars 1871
+  - 27 mai 1771 commune
+  - 1875
+  - 1876
+  - 16 mai 1877
+  - 1877
+  - 1879
+  - 1979 president
+  - 1901
+  - 1893
+  - 1881
+  - 1882
+  - 1884
+  - 1901
+  - 1905
+  - 1913
+  - 1886
+  - 1882-1892
+  _clipCorrect: {fileID: 0}
+  _clipUncorrect: {fileID: 0}
 --- !u!1 &804543212
 GameObject:
   m_ObjectHideFlags: 0

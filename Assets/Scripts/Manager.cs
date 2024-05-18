@@ -17,6 +17,7 @@ public class Manager : MonoBehaviour
     GeoFranceAAV _franceAAV;
     HistRevolutionFrancaise _histRevolFrancaise;
     HistEuropeXIXe _histEuropeXIX;
+    HistIIIeRep _histIIIeRep;
     QuestionHandler _handler;
 
     float time = 0f;
@@ -33,6 +34,7 @@ public class Manager : MonoBehaviour
         _franceVilleCentre = GetComponent<GeoFranceVilleCentre>();
         _histRevolFrancaise = GetComponent<HistRevolutionFrancaise>();
         _histEuropeXIX = GetComponent<HistEuropeXIXe>();
+        _histIIIeRep = GetComponent<HistIIIeRep>();
 
         Init();        
 
@@ -70,6 +72,10 @@ public class Manager : MonoBehaviour
                 _handler = _histEuropeXIX;
 
                 break;
+            case questionState.HIST_IIIe_REP:
+                _handler = _histIIIeRep;
+                
+                break;
             default:
                 EditorApplication.Exit(-1);
 
@@ -99,8 +105,6 @@ public class Manager : MonoBehaviour
     void Update() {
         if (Input.GetButtonDown("Submit"))
             Submit();
-
-        Debug.Log(Input.GetButtonDown("Submit"));
     }
 
     void LateUpdate() {
