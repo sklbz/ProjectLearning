@@ -2,18 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEditor.Compilation;
 
 public class HistIIIeRep : QuestionHandler {
     int good = 0, bad = 0;
     [SerializeField]
     int starting_index = 0, ending_index;
     [SerializeField]
-    Text questionText, answerText, goodText, badText;
+    Text questionText, answerText, goodText, badText, debugText;
 
     [SerializeField]
     string[] _eventName = new string[15], _eventDate = new string[15];
 
-    string _answer, _question;
+    string _answer, _question, response;
 
     [SerializeField]
     AudioClip _clipCorrect, _clipUncorrect;
@@ -23,7 +24,8 @@ public class HistIIIeRep : QuestionHandler {
     }
 
     public override void Submit() {
-        if (answerText.text.ToLower() == _answer)
+        response = answerText.text.ToLower();
+        if (response == _answer)
         {
             _source.PlayOneShot(_clipCorrect);
             good++;
@@ -40,7 +42,10 @@ public class HistIIIeRep : QuestionHandler {
     }
 
     void UpdateValues() {
-        Debug.Log($"good:{good}\tbad:{bad}\t\tQ: {_question}\tA: {_answer}");
+        string log = $"good:{good}\tbad:{bad}\tQ: {_question}\tA: {_answer}\tsubmitted:{response}";
+
+        Debug.Log(log);
+        debugText.text = log;
 
         goodText.text = good.ToString();
         badText.text = bad.ToString();

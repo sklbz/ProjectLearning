@@ -27,14 +27,7 @@ public class Manager : MonoBehaviour
     Text Chrono;
 
     void Awake() {
-        _deu = GetComponent<Allemand>();
-        _chili = GetComponent<GeoChili>();
-        _geo = GetComponent<QuestionManager>();
-        _franceAAV = GetComponent<GeoFranceAAV>();
-        _franceVilleCentre = GetComponent<GeoFranceVilleCentre>();
-        _histRevolFrancaise = GetComponent<HistRevolutionFrancaise>();
-        _histEuropeXIX = GetComponent<HistEuropeXIXe>();
-        _histIIIeRep = GetComponent<HistIIIeRep>();
+        DynamicFind();
 
         Init();        
 
@@ -94,12 +87,26 @@ public class Manager : MonoBehaviour
             LaunchChrono();
     }
 
+    void DynamicFind() {
+        _deu = GetComponent<Allemand>();
+        _chili = GetComponent<GeoChili>();
+        _geo = GetComponent<QuestionManager>();
+        _franceAAV = GetComponent<GeoFranceAAV>();
+        _franceVilleCentre = GetComponent<GeoFranceVilleCentre>();
+        _histRevolFrancaise = GetComponent<HistRevolutionFrancaise>();
+        _histEuropeXIX = GetComponent<HistEuropeXIXe>();
+        _histIIIeRep = GetComponent<HistIIIeRep>();
+    }
+
     void Init() {
         _geo.enabled = false;
         _deu.enabled = false;
         _chili.enabled = false;
         _franceAAV.enabled = false;
         _franceVilleCentre.enabled = false;
+        _histEuropeXIX.enabled = false;
+        _histRevolFrancaise.enabled = false;
+        _histIIIeRep.enabled = false;
     }
 
     void Update() {
