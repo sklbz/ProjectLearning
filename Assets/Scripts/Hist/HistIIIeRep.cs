@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
-using UnityEditor.Compilation;
 
 public class HistIIIeRep : QuestionHandler {
     int good = 0, bad = 0;

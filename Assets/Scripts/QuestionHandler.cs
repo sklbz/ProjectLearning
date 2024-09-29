@@ -25,4 +25,8 @@ public abstract class QuestionHandler : MonoBehaviour
 
     public abstract void GenerateQuestion();
     public abstract void Submit();
+
+    public void EmitSound(AudioClip clip) {
+        _source.PlayOneShot(clip);
+    }
 }

@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Manager : MonoBehaviour
 {
     [SerializeField]
-    questionState _state;
+    QuestionState _state;
 
     Allemand _deu;
     QuestionManager _geo;
@@ -18,6 +18,7 @@ public class Manager : MonoBehaviour
     HistRevolutionFrancaise _histRevolFrancaise;
     HistEuropeXIXe _histEuropeXIX;
     HistIIIeRep _histIIIeRep;
+    DynamicDataQuiz _dynamic;
     QuestionHandler _handler;
 
     float time = 0f;
@@ -33,44 +34,44 @@ public class Manager : MonoBehaviour
 
         switch (_state)
         {
-            case questionState.ALLEMAND:
+            case QuestionState.ALLEMAND:
                 _handler = _deu;
 
                 break;
 
-            case questionState.GEOGRAPHIE:
+            case QuestionState.GEOGRAPHIE:
                 _handler = _geo;
 
                 break;
 
-            case questionState.CHILI:
+            case QuestionState.CHILI:
                 _handler= _chili;
 
                 break;
 
-            case questionState.GEO_VILLE_CENTRE:
+            case QuestionState.GEO_VILLE_CENTRE:
                 _handler = _franceVilleCentre;
 
                 break;
 
-            case questionState.GEO_AAV:
+            case QuestionState.GEO_AAV:
                 _handler = _franceAAV;
 
                 break;
-            case questionState.HIST_REVOLUTION_DATE:
+            case QuestionState.HIST_REVOLUTION_DATE:
                 _handler = _histRevolFrancaise;
 
                 break;
-            case questionState.HIST_EUROPE_XIX:
+            case QuestionState.HIST_EUROPE_XIX:
                 _handler = _histEuropeXIX;
 
                 break;
-            case questionState.HIST_IIIe_REP:
+            case QuestionState.HIST_IIIe_REP:
                 _handler = _histIIIeRep;
                 
                 break;
-            default:
-                EditorApplication.Exit(-1);
+            case QuestionState.DYNAMIC:
+                _handler = _dynamic;
 
                 break;
         }
@@ -96,6 +97,7 @@ public class Manager : MonoBehaviour
         _histRevolFrancaise = GetComponent<HistRevolutionFrancaise>();
         _histEuropeXIX = GetComponent<HistEuropeXIXe>();
         _histIIIeRep = GetComponent<HistIIIeRep>();
+        _dynamic = GetComponent<DynamicDataQuiz>();
     }
 
     void Init() {

@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 11942522}
   - component: {fileID: 11942524}
+  - component: {fileID: 11942525}
   - component: {fileID: 11942523}
   m_Layer: 5
   m_Name: Bad Text
@@ -174,7 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
+  m_Color: {r: 0.8039216, g: 0.8392157, b: 0.95686275, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -203,6 +204,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11942521}
   m_CullTransparentMesh: 1
+--- !u!114 &11942525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11942521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f9a4c6c1dc3aed43ae2676843de1844, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &127847980
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,7 +562,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.11764706, g: 0.11764706, b: 0.18039216, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -615,6 +628,7 @@ GameObject:
   m_Component:
   - component: {fileID: 566051548}
   - component: {fileID: 566051550}
+  - component: {fileID: 566051551}
   - component: {fileID: 566051549}
   m_Layer: 5
   m_Name: Question Text
@@ -656,7 +670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.32, g: 0.33846155, b: 0.4, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -685,6 +699,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 566051547}
   m_CullTransparentMesh: 1
+--- !u!114 &566051551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566051547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af906319eafd38140a8f1953704972b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &646819774
 GameObject:
   m_ObjectHideFlags: 0
@@ -860,6 +886,8 @@ GameObject:
   - component: {fileID: 785479921}
   - component: {fileID: 785479922}
   - component: {fileID: 785479923}
+  - component: {fileID: 785479925}
+  - component: {fileID: 785479924}
   - component: {fileID: 785479917}
   m_Layer: 0
   m_Name: Game Manager
@@ -1062,12 +1090,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785479912}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa7d787123b39ee4b941b3e08a155d43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _state: 7
+  _state: 8
   Chrono: {fileID: 1690196214}
 --- !u!82 &785479917
 AudioSource:
@@ -1632,28 +1660,28 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785479912}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 760e777ca78c29848b98b5f3f77031c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _source: {fileID: 785479917}
   starting_index: 0
-  ending_index: 5
+  ending_index: 0
   questionText: {fileID: 566051549}
   answerText: {fileID: 1132607997}
   goodText: {fileID: 1289540852}
   badText: {fileID: 11942523}
+  debugText: {fileID: 1001627447}
   _eventName:
   - defaite de Sedan
   - proclamation de la republique a paris
-  - nord de la france occuppe
-  - paris assiege par les allemands
-  - 'armistice '
+  - nord de la france occupe
+  - armistice
   - traite de francfort
   - election assemblee nationale
   - recuperation des canons de la butte montmartre
-  - armee des versailais dans paris
+  - armee des versaillais dans paris
   - belleville tombe
   - vote de lois constitutionnelles apres querelle du drapeau
   - chambre republicaine
@@ -1674,20 +1702,19 @@ MonoBehaviour:
   _eventDate:
   - 2 sept 1870
   - 4 sept 1870
-  - 1870
+  - 1871
   - 28 janvier 1871
   - 10 mai 1871
   - 8 fev 1871
   - 18 mars 1871
-  - 18 mars 1871
-  - 21 mai 1771
-  - 27 mai 1771
+  - 21 mai 1871
+  - 27 mai 1871
   - 1875
   - 1876
   - 16 mai 1877
   - 1877
   - 1879
-  - 1979 president
+  - 1879 president
   - 1901
   - 1893
   - 1881
@@ -1700,6 +1727,55 @@ MonoBehaviour:
   - 1882-1892
   _clipCorrect: {fileID: 8300000, guid: 00e5d50876857f447bf7c1c5bc36bea2, type: 3}
   _clipUncorrect: {fileID: 8300000, guid: d5dc5b3093030b44f838316108ce1b26, type: 3}
+--- !u!114 &785479924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785479912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 395a9d51d369c0f4e9832096390c2400, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataList1:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  dataList2:
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+--- !u!114 &785479925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785479912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cc4a09acad4e6b40be98ad40a3ed382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _source: {fileID: 0}
+  clipCorrect: {fileID: 8300000, guid: 00e5d50876857f447bf7c1c5bc36bea2, type: 3}
+  clipUncorrect: {fileID: 8300000, guid: d5dc5b3093030b44f838316108ce1b26, type: 3}
 --- !u!1 &804543212
 GameObject:
   m_ObjectHideFlags: 0
@@ -1858,7 +1934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.8039216, g: 0.8392157, b: 0.95686275, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1938,7 +2014,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.32156864, g: 0.34117648, b: 0.4, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2112,6 +2188,7 @@ GameObject:
   - component: {fileID: 1132607996}
   - component: {fileID: 1132607998}
   - component: {fileID: 1132607997}
+  - component: {fileID: 1132607999}
   m_Layer: 5
   m_Name: Answer Text
   m_TagString: Untagged
@@ -2152,7 +2229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.32156864, g: 0.34117648, b: 0.4, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2181,6 +2258,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132607995}
   m_CullTransparentMesh: 1
+--- !u!114 &1132607999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132607995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5136ed99281ac884ebb43af9dcc71048, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1282669375
 GameObject:
   m_ObjectHideFlags: 0
@@ -2297,6 +2386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1289540851}
   - component: {fileID: 1289540853}
+  - component: {fileID: 1289540854}
   - component: {fileID: 1289540852}
   m_Layer: 5
   m_Name: Good Text
@@ -2338,7 +2428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
+  m_Color: {r: 0.8039216, g: 0.8392157, b: 0.95686275, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2367,6 +2457,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1289540850}
   m_CullTransparentMesh: 1
+--- !u!114 &1289540854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1289540850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 379269bb5393ab94ea3bb9d713549c9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1690196212
 GameObject:
   m_ObjectHideFlags: 0
