@@ -109,6 +109,7 @@ public class Manager : MonoBehaviour
         _histEuropeXIX.enabled = false;
         _histRevolFrancaise.enabled = false;
         _histIIIeRep.enabled = false;
+        _dynamic.enabled = false;
     }
 
     void Update() {
