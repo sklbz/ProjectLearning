@@ -11,12 +11,17 @@ public class DynamicDataQuiz : QuestionHandler
 
     int good = 0, bad = 0;
     Text questionText, answerText, goodText, badText;
-    string answer, question;
+    string answer, question, normalizedAnswer;
 
     [SerializeField]
     AudioClip clipCorrect, clipUncorrect;
 
+    [SerializeField]
+    bool reduceToAlphaNum = true;
+
     bool isInitialized = false;
+    
+    readonly Dictionary<char, char> map = new();
 
     void Init() {
         holder = GetComponent<DataHolder>();
@@ -31,8 +36,10 @@ public class DynamicDataQuiz : QuestionHandler
         goodText = FindObjectOfType<GoodText>().GetComponent<Text>();
         badText = FindObjectOfType<BadText>().GetComponent<Text>();
 
+        InitMap();
+
         Debug.Log("Some test text. é");
-        Debug.Log(NormalizeText("Some test text. é"));
+        Debug.Log(NormalizeText("Some test text. é ï, '"));
 
         isInitialized = true;
     }
@@ -52,14 +59,26 @@ public class DynamicDataQuiz : QuestionHandler
         question = questionList[index];
         answer = answerList[index];
 
+        normalizedAnswer = NormalizeText(answer);
+
         questionText.text = question;
     }
 
     public override void Submit() {
         string input = answerText.text;
-        Debug.Log(NormalizeText(input));
+        string normalizedInput = NormalizeText(input);
 
-        EmitSound(clipCorrect);
+        if (normalizedInput == normalizedAnswer)
+        {
+            EmitSound(clipCorrect);
+            good++;
+        }
+        else
+        {
+            EmitSound(clipUncorrect);
+            bad++;
+        }
+
 
         UpdateValues();
 
@@ -73,10 +92,39 @@ public class DynamicDataQuiz : QuestionHandler
         badText.text = bad.ToString();
     }
 
-    string NormalizeText( string text ) {
-        text = text.ToLower();
-        
+    void InitMap() {
+        string letters = "abcdefghijklmnopqrstuvwxyz";
 
-        return text.Filter(true, true, false, false, false);
+        for (int i = 0; i < letters.Length; i++)
+        {
+            map[letters[i]] = letters[i];
+        }
+
+        map['é'] = 'e';
+        map['è'] = 'e';
+        map['ï'] = 'i';
+        map['à'] = 'a';
+    }
+
+    string NormalizeText(string text) {
+        text = text.ToLower();
+
+        text = text.Filter(true, true, false, false, false);
+
+        if (reduceToAlphaNum)
+            text = ReduceString(text);
+
+        return text;
+    }
+
+    string ReduceString(string text) {
+        char[] split = new char[text.Length];
+
+        for (int i = 0; i < text.Length; i++)
+        {
+            split[i] = map[text[i]];
+        };
+
+        return new string(split);
     }
 }
