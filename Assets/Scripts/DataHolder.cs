@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DataHolder {
+public class DataHolder : MonoBehaviour {
 
     [SerializeField]
-    string name;
+    string dataName;
 
     [SerializeField]
     string[] dataList1, dataList2;
