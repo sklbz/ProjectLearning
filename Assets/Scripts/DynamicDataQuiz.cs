@@ -38,9 +38,6 @@ public class DynamicDataQuiz : QuestionHandler
 
         InitMap();
 
-        Debug.Log("Some test text. é");
-        Debug.Log(NormalizeText("Some test text. é ï, '"));
-
         isInitialized = true;
     }
 
