@@ -23,21 +23,14 @@ public class DynamicDataQuiz : QuestionHandler
     
     readonly Dictionary<char, char> map = new();
 
-    int start, end;
     [SerializeField]
+    int start, end;
     int Start {
-        get { 
-            return start;
-        }
         set {
             start = Mathf.Clamp(value, 0, dataLength);
         }
     }
-    [SerializeField]
     int End {
-        get {
-            return end;
-        }
         set {
             end = Mathf.Clamp(value, 0, dataLength);
         }
