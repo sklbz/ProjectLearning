@@ -25,7 +25,6 @@ public class DynamicDataQuiz : QuestionHandler
 
     void Init() {
         holder = GetComponent<DataHolder>();
-        Debug.Log(data[0]);
         data[0] = new string[0];
         data[1] = new string[0];
         data[0] = holder.Data1;
