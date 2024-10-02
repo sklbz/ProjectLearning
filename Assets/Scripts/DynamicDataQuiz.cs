@@ -38,26 +38,10 @@ public class DynamicDataQuiz : QuestionHandler
 
 
     void Init() {
-        holder = GetComponent<DataHolder>();
-        data[0] = new string[0];
-        data[1] = new string[0];
-        data[0] = holder.Data1;
-        data[1] = holder.Data2;
-
-        if (data[0].Length != data[1].Length)
-            Debug.LogError("Improper data format. Not matching Length.");
-
-        dataLength = data[0].Length;
-
-        questionText = FindObjectOfType<QuestionText>().GetComponent<Text>();
-        answerText = FindObjectOfType<AnswerText>().GetComponent<Text>();
-        goodText = FindObjectOfType<GoodText>().GetComponent<Text>();
-        badText = FindObjectOfType<BadText>().GetComponent<Text>();
-
+        InitData();
+        InitUI();
         InitMap();
-
-        Start = start;
-        End = end;
+        InitBounds();
 
         isInitialized = true;
     }
@@ -108,6 +92,31 @@ public class DynamicDataQuiz : QuestionHandler
 
         goodText.text = good.ToString();
         badText.text = bad.ToString();
+    }
+
+    void InitData() {
+        holder = GetComponent<DataHolder>();
+        data[0] = new string[0];
+        data[1] = new string[0];
+        data[0] = holder.Data1;
+        data[1] = holder.Data2;
+
+        if (data[0].Length != data[1].Length)
+            Debug.LogError("Improper data format. Not matching Length.");
+
+        dataLength = data[0].Length;
+    }
+
+    void InitUI() {
+        questionText = FindObjectOfType<QuestionText>().GetComponent<Text>();
+        answerText = FindObjectOfType<AnswerText>().GetComponent<Text>();
+        goodText = FindObjectOfType<GoodText>().GetComponent<Text>();
+        badText = FindObjectOfType<BadText>().GetComponent<Text>();
+    }
+
+    void InitBounds() {
+        Start = start;
+        End = end;
     }
 
     void InitMap() {
