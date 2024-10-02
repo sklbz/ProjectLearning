@@ -125,8 +125,10 @@ public class DynamicDataQuiz : QuestionHandler
 
         map['é'] = 'e';
         map['è'] = 'e';
+        map['ê'] = 'e';
         map['ï'] = 'i';
         map['à'] = 'a';
+        map['ù'] = 'u';
     }
 
     string NormalizeText(string text) {
