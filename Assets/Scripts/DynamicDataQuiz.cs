@@ -91,10 +91,15 @@ public class DynamicDataQuiz : QuestionHandler
 
     void InitMap() {
         string letters = "abcdefghijklmnopqrstuvwxyz";
+        string numbers = "0123456789";
 
         for (int i = 0; i < letters.Length; i++)
         {
             map[letters[i]] = letters[i];
+        }
+        for(int i = 0; i<numbers.Length; i++)
+        {
+            map[numbers[i]] = numbers[i];
         }
 
         map['é'] = 'e';
