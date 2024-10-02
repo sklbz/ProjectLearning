@@ -9,7 +9,7 @@ public class DynamicDataQuiz : QuestionHandler
     DataHolder holder;
     readonly string[][] data = new string[2][];
 
-    int good = 0, bad = 0;
+    int good = 0, bad = 0, dataLength = int.MaxValue;
     Text questionText, answerText, goodText, badText;
     string answer, question, normalizedAnswer;
 
@@ -23,6 +23,27 @@ public class DynamicDataQuiz : QuestionHandler
     
     readonly Dictionary<char, char> map = new();
 
+    int start, end;
+    [SerializeField]
+    int Start {
+        get { 
+            return start;
+        }
+        set {
+            start = Mathf.Clamp(value, 0, dataLength);
+        }
+    }
+    [SerializeField]
+    int End {
+        get {
+            return end;
+        }
+        set {
+            end = Mathf.Clamp(value, 0, dataLength);
+        }
+    }
+
+
     void Init() {
         holder = GetComponent<DataHolder>();
         data[0] = new string[0];
@@ -30,12 +51,20 @@ public class DynamicDataQuiz : QuestionHandler
         data[0] = holder.Data1;
         data[1] = holder.Data2;
 
+        if (data[0].Length != data[1].Length)
+            Debug.LogError("Improper data format. Not matching Length.");
+
+        dataLength = data[0].Length;
+
         questionText = FindObjectOfType<QuestionText>().GetComponent<Text>();
         answerText = FindObjectOfType<AnswerText>().GetComponent<Text>();
         goodText = FindObjectOfType<GoodText>().GetComponent<Text>();
         badText = FindObjectOfType<BadText>().GetComponent<Text>();
 
         InitMap();
+
+        Start = start;
+        End = end;
 
         isInitialized = true;
     }
@@ -50,7 +79,7 @@ public class DynamicDataQuiz : QuestionHandler
         string[] questionList = data[whichListIsQuestion];
         string[] answerList = data[whichListIsAnswer];
 
-        int index = Random.Range(0, data[0].Length);
+        int index = Random.Range(start, end);
 
         question = questionList[index];
         answer = answerList[index];
@@ -96,7 +125,7 @@ public class DynamicDataQuiz : QuestionHandler
         {
             map[letters[i]] = letters[i];
         }
-        for(int i = 0; i<numbers.Length; i++)
+        for(int i = 0; i < numbers.Length; i++)
         {
             map[numbers[i]] = numbers[i];
         }
