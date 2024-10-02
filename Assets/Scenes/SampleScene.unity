@@ -1842,9 +1842,61 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataName: Hist crise de 1929
   dataList1:
-  - 5
+  - 11 nov 1918
+  - 31 mai 1924
+  - juin 1932
+  - 1929 chomage industrie US
+  - 1929 chomage industrie All
+  - 1932 chomage industrie US
+  - 1932 chomage industrie All
+  - jeudi 24 octobre 1929
+  - 1927-1935
+  - 1928 All
+  - 1932 All
+  - 6 nov 1932
+  - oct 1917
+  - 30 janvier 1933
+  - 27 fevrier 1933
+  - 23 mars 1933
+  - 30 juin 1934
+  - 2 aout 1934
+  - 1935 US
+  - 1933 US
+  - nov 1932 nov 1944
+  - 26 avril 1936
+  - 3 mai 1936
+  - 7 juin 1936
+  - 11 juin 1936
+  - 21 juin 1936
+  - 29 sept 1938
   dataList2:
-  - 6
+  - "armistice sign\xE9 par All"
+  - plan young dette 59 ans
+  - "conference de lausanne dette quasi annul\xE9e"
+  - 5% chomage industrie US
+  - 13% chomage industrie All
+  - 36% chomage industrie US
+  - 45% chomage industrie All
+  - debut de la crise eco
+  - nord pas de calais perd 50K emploi industriels
+  - 8% chomage 2,6% NSDAP
+  - 43.8% chomage 33.1% NSDAP
+  - NSDAP legislatives
+  - revolution bolchevique
+  - hitler chancelier
+  - reichstag en feu
+  - legalisation dictature
+  - 'nuit des longs couteaux '
+  - hindenburg meurt
+  - secu aux US
+  - "amenagement vall\xE9e tennessee"
+  - FDR president
+  - premier tour legislatives fr
+  - 2nd tour legislatives fr
+  - accord matignon (syndicat, salaires)
+  - "cong\xE9s pay\xE9s"
+  - semaine de 40h
+  - accord de munich
 --- !u!114 &785479925
 MonoBehaviour:
   m_ObjectHideFlags: 0
